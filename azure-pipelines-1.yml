@@ -8,7 +8,6 @@ trigger:
 
 variables:
   patch1: $[counter(variables['build.reason'], 0)]
-  string: $[format('Hello {0} {1}', 'John', 'Doe')]
   name: patch_version
   value1: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']), 1)]
   value21: $[counter(format('{0}.{1}.{2}', variables['major_version'], variables['minor_version'],variables['build.reason']), 1)]
