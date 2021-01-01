@@ -19,6 +19,6 @@ pool:
   
 steps:
   - bash: echo $(patch)
-  - bash: echo $(string)
+
   - bash: echo $(value)
   - bash: echo $(value2)
