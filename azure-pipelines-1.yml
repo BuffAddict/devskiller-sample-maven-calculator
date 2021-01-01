@@ -9,6 +9,8 @@ trigger:
 variables:
   patch: $[counter(variables['build.reason'], 0)]
   string: $[format('Hello {0} {1}', 'John', 'Doe')]
+  name: patch_version
+  value: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']), 1)]
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -16,3 +18,4 @@ pool:
 steps:
   - bash: echo $(patch)
   - bash: echo $(string)
+  - bash: echo $(patch_version)
