@@ -8,9 +8,11 @@ trigger:
 
 variables:
   patch: $[counter(variables['build.reason'], 0)]
+  string: $[format('Hello {0} {1}', 'John', 'Doe')]
 
 pool:
   vmImage: 'ubuntu-latest'
   
 steps:
   - bash: echo $(patch)
+  - bash: echo $(string)
