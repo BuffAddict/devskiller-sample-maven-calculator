@@ -14,6 +14,8 @@ variables:
   value2: $[counter(format('{0}.{1}.{2}', variables['major_version'], variables['minor_version'],variables['build.reason']), 1)]
 
 
+name: $(major_version).$(minor_version).$(patch_version)
+
 pool:
   vmImage: 'ubuntu-latest'
   
