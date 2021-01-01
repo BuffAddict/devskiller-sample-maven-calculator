@@ -11,7 +11,7 @@ variables:
   string: $[format('Hello {0} {1}', 'John', 'Doe')]
   name: patch_version
   value: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']), 1)]
-  value2: $[counter(and(format('{0}.{1}', variables['major_version'], variables['minor_version']),variables['build.reason']), 1)]
+  value2: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']),variables['build.reason'], 1)]
 
 
 pool:
