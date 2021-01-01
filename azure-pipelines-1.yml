@@ -7,18 +7,18 @@ trigger:
 - main
 
 variables:
-  patch: $[counter(variables['build.reason'], 0)]
+  patch1: $[counter(variables['build.reason'], 0)]
   string: $[format('Hello {0} {1}', 'John', 'Doe')]
   name: patch_version
-  value: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']), 1)]
-  value2: $[counter(format('{0}.{1}.{2}', variables['major_version'], variables['minor_version'],variables['build.reason']), 1)]
+  value1: $[counter(format('{0}.{1}', variables['major_version'], variables['minor_version']), 1)]
+  value21: $[counter(format('{0}.{1}.{2}', variables['major_version'], variables['minor_version'],variables['build.reason']), 1)]
 
 
 pool:
   vmImage: 'ubuntu-latest'
   
 steps:
-  - bash: echo $(patch)
+  - bash: echo $(patch1)
 
-  - bash: echo $(value)
-  - bash: echo $(value2)
+  - bash: echo $(value1)
+  - bash: echo $(value21)
