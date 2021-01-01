@@ -18,4 +18,4 @@ pool:
 steps:
   - bash: echo $(patch)
   - bash: echo $(string)
-  - bash: echo $(patch_version)
+  - bash: echo $(value)
